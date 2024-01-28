@@ -1,0 +1,7 @@
+h3 {
+    display: block;
+    min-width: 100px;
+    text-align: center;
+    margin: 0;
+    font-weight: 500;
+}
