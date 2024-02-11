@@ -8,7 +8,7 @@ if (sidebar) {
         <div class="roundbox sidebox borderTopRound">
         <form id="tagForm" class="tagForm">
           <div class="caption titled">
-          → Tag check
+          → Tag checker
           </div>
           <div class="submitForm">
             <p> Tag: </p>
@@ -18,25 +18,30 @@ if (sidebar) {
                 <option value="bitmasks"> bitmasks </option>
                 <option value="binary search"> binary search </option>
                 <option value="combinatorics"> combinatorics </option>
+                <option value="constructive algorithms"> constructive algorithms </option>
                 <option value="dp"> dp </option>
                 <option value="data structures"> data structures </option>
                 <option value="dfs and similar"> dfs and similar </option>
                 <option value="divide and conquer"> divide and conquer </option>
                 <option value="dsu"> dsu </option>
+                <option value="flows"> flows </option>
                 <option value="graphs"> graphs </option>
+                <option value="graph matchings"> graph matchings </option>
                 <option value="greedy"> greedy </option>
                 <option value="games"> games </option>
                 <option value="geomerty"> geomerty </option>
                 <option value="hashing"> hashing </option>
                 <option value="implementation"> implementation </option>
+                <option value="interactive"> implementation </option>
                 <option value="math"> math </option>
                 <option value="number theory"> number theory </option>
                 <option value="probabilities"> probabilities  </option>
                 <option value="two pointers"> two pointers </option>
+                <option value="trees"> trees </option>
+                <option value="ternary search"> ternary search </option>
                 <option value="shortest paths"> shortest paths </option>
                 <option value="strings"> strings </option>
                 <option value="sortings"> sortings </option>
-                <option value="trees"> trees </option>
             </select>
           </div>
           <div class="btn">
