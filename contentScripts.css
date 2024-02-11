@@ -15,17 +15,23 @@
     text-align: center;
     margin-bottom: 1em;
 }
-.answer{
+.answer_box{
     display: flex;
+    gap: 4px;
     justify-content: center;
+    flex-wrap: wrap;
     margin-bottom: 1em;
     font-size: 1.2rem;
 }
-.answer span{
+#answer{
+    display: none;
+}
+.answer_box span{
     background-color: rgb(145, 231, 145);
     border: 0.1rem solid #888;
     border-radius: 5px;
     padding: 0.2rem;
+    display: inline-block;
     display: none;
 }
 .submit{
