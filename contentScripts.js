@@ -154,7 +154,6 @@ if (sidebar) {
   console.error("id (#sidebar) not found in the document");
 }
 
-
 const checkShowAllButton = document.querySelector("#checkShowAllButton");
 
 checkShowAllButton.addEventListener("click", async function () {
@@ -203,6 +202,11 @@ checkShowAllButton.addEventListener("click", async function () {
       document.getElementById("answer").style.backgroundColor = "#f0f0f0";
       return;
     } else {
+      if (rating !== undefined && rating !== null) {
+        const tagBox = document.createElement("span");
+        tagBox.textContent = `*${rating}`;
+        document.getElementById("answer_box").append(tagBox);
+      }
       tags.forEach((tag) => {
         console.log(tag);
         const tagBox = document.createElement("span");
