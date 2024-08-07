@@ -232,6 +232,6 @@ checkShowAllButton.addEventListener("click", async function () {
     setTimeout(() => {
       console.log("Function finished processing");
       isProcessing = false;
-    }, 3000);
+    }, 2000);
   }
 });
