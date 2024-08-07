@@ -8,7 +8,7 @@ if (sidebar) {
         <div class="roundbox sidebox borderTopRound">
         <form id="tagForm" class="tagForm">
           <div class="caption titled">
-          → Tag checker
+          → Tags checker
           </div>
           <div class="submitForm">
             <p> Tag: </p>
@@ -106,7 +106,7 @@ if (sidebar) {
         if (rating === undefined || rating === null) {
           document.getElementById("answer").style.fontWeight = "bold";
 
-          answer.innerHTML = `Rating not found`;
+          answer.innerHTML = `Rating are not available yet`;
           document.getElementById("answer").style.display = "inline";
           document.getElementById("answer").style.backgroundColor = "#f0f0f0";
         } else {
@@ -120,7 +120,7 @@ if (sidebar) {
       }
 
       if (tags === undefined || tags === null) {
-        answer.innerHTML = `tags not found`;
+        answer.innerHTML = `Tags are not available yet`;
         document.getElementById("answer").style.fontWeight = "bold";
         document.getElementById("answer").style.display = "inline";
         document.getElementById("answer").style.backgroundColor = "#f0f0f0";
@@ -154,9 +154,14 @@ if (sidebar) {
   console.error("id (#sidebar) not found in the document");
 }
 
+
 const checkShowAllButton = document.querySelector("#checkShowAllButton");
+let isProcessing = false;
 
 checkShowAllButton.addEventListener("click", async function () {
+  if (isProcessing) return;
+  isProcessing = true;
+
   // Remove tag from Show Check tags button
   const tagBox = document.querySelectorAll("#answer_box span");
   tagBox.forEach((tag) => {
@@ -166,7 +171,8 @@ checkShowAllButton.addEventListener("click", async function () {
   var id;
   var index;
 
-  if (url[23] == "c") {
+  const url = window.location.href;
+  if (url[23] === "c") {
     var data = url.slice(31, url.length);
     var dataArray = data.split(/[\/\?]/);
     id = dataArray[0];
@@ -177,17 +183,18 @@ checkShowAllButton.addEventListener("click", async function () {
     id = dataArray[0];
     index = dataArray[1];
   }
+
   const requestURL = `https://codeforces.com/api/contest.standings?contestId=${id}&from=1&count=1`;
   try {
-    var rating = null;
-    var tags = null;
+    let rating = null;
+    let tags = null;
     const response = await fetch(requestURL);
     const data = await response.json();
     const problemsList = data.result.problems;
 
-    if (data.status == "OK") {
-      for (var i = 0; i < problemsList.length; i++) {
-        if (problemsList[i].index == index) {
+    if (data.status === "OK") {
+      for (let i = 0; i < problemsList.length; i++) {
+        if (problemsList[i].index === index) {
           rating = problemsList[i].rating;
           tags = problemsList[i].tags;
           break;
@@ -195,27 +202,25 @@ checkShowAllButton.addEventListener("click", async function () {
       }
     }
 
-    if (tags === undefined || tags === null) {
-      answer.innerHTML = `tags not found`;
-      document.getElementById("answer").style.fontWeight = "bold";
-      document.getElementById("answer").style.display = "inline";
-      document.getElementById("answer").style.backgroundColor = "#f0f0f0";
-      return;
+    if (!tags) {
+      const answer = document.getElementById("answer");
+      answer.innerHTML = `Tags are not available yet`;
+      answer.style.fontWeight = "bold";
+      answer.style.display = "inline";
+      answer.style.backgroundColor = "#f0f0f0";
     } else {
-      if (rating !== undefined && rating !== null) {
-        const tagBox = document.createElement("span");
-        tagBox.textContent = `*${rating}`;
-        document.getElementById("answer_box").append(tagBox);
+      if (rating) {
+        const ratingBox = document.createElement("span");
+        ratingBox.textContent = `*${rating}`;
+        document.getElementById("answer_box").append(ratingBox);
       }
       tags.forEach((tag) => {
-        console.log(tag);
         const tagBox = document.createElement("span");
         tagBox.textContent = tag;
         document.getElementById("answer_box").append(tagBox);
       });
 
       const tagBox = document.querySelectorAll("#answer_box span");
-      console.log(tagBox);
       tagBox.forEach((tag) => {
         tag.style.display = "inline";
         tag.style.backgroundColor = "#f0f0f0";
@@ -223,5 +228,10 @@ checkShowAllButton.addEventListener("click", async function () {
     }
   } catch (e) {
     console.log("Error fetch data from Codeforces");
+  } finally {
+    setTimeout(() => {
+      console.log("Function finished processing");
+      isProcessing = false;
+    }, 3000);
   }
 });
