@@ -1,0 +1,35 @@
+Privacy Policy for Codeforces Tags Checker
+Effective Date: 26/1/2025
+
+I value your privacy. This Privacy Policy outlines the information I collect, how I use it, and how I protect it when you use the Codeforces Tags Checker Chrome extension.
+
+1. Information I Collect
+I do not collect any personal information or data from users while using the Extension. The Extension operates entirely on your local machine and does not access personal data from your Google account or browsing history.
+
+The Extension interacts only with publicly available content on the Codeforces website, such as problem titles and tags.
+
+2. Permissions Requested
+To function properly, the Extension may request the following permissions:
+
+activeTab: This permission allows the Extension to interact with the currently active tab, specifically Codeforces problem pages, in order to filter and display relevant tags based on your preferences.
+
+Host Permissions (e.g., https://codeforces.com/*): This permission allows the Extension to access Codeforces problem pages to filter and display relevant tag information when you're browsing the site. It only grants access to publicly available information on the Codeforces website.
+
+3. Data Usage
+No personal data is collected, stored, or transmitted to external servers. The Extension operates entirely on your local device and only processes information visible on Codeforces problem pages.
+
+4. Data Retention
+I do not collect, store, or retain any personal data. The Extension does not store user-specific data beyond temporary information necessary for filtering Codeforces problems. Any user preferences (such as tag filters) are stored locally in the browser’s storage and are not shared with third parties.
+
+5. Security
+I take reasonable measures to ensure the security of the data processed by the Extension. Since no personal data is collected or transmitted, the potential risks are minimized.
+
+6. Third-Party Services
+The Extension does not use or share your data with any third-party services.
+
+7. Changes to This Privacy Policy
+I may update this Privacy Policy from time to time. Any changes will be posted here with an updated effective date. I encourage you to review this policy periodically.
+
+8. Contact Me
+If you have any questions about this Privacy Policy, please contact me at:
+https://www.linkedin.com/in/suhailali1999/
