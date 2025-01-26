@@ -1,7 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 h3 {
-    display: block;
-    min-width: 100px;
-    text-align: center;
     margin: 0;
-    font-weight: 500;
+    font-size: 17px;
+    white-space: nowrap;
+}
+
+img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
